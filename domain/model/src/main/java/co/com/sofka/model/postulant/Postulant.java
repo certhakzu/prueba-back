@@ -67,14 +67,8 @@ public class Postulant {
         this.idTraining = idTraining;
     }
 
-    public Postulant(String id, LocalDate dateOfBirth, ChallengePostulant challenge) {
-        this.id = id;
-        this.dateOfBirth = dateOfBirth;
-        this.challenge = challenge;
-    }
-
     public Postulant(String id, DocumentUser documentUser, String dateOfBirth, String nationality, Phone phone,
-                     String idTraining, String email) {
+            String idTraining, String email) {
         this.id = id;
         this.documentUser = documentUser;
         this.dateOfBirth = LocalDate.parse(dateOfBirth);

@@ -11,10 +11,9 @@ import java.time.LocalDate;
 public class CalculateAgeUseCase {
     private final PostulantRepository postulantRepository;
 
-    public Mono<Integer> calculateAge(String datePostulant) {
+    public Mono<Integer> calculateAge(String datePostulant){
         LocalDate dateOfBirth = LocalDate.parse(datePostulant);
 
-        return Mono.just(LocalDate.now().getYear() - dateOfBirth.getYear());
-
+        return  Mono.just(LocalDate.now().getYear() - dateOfBirth.getYear());
     }
 }

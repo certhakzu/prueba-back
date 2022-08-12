@@ -1,6 +1,5 @@
 package co.com.sofka.usecase.trainingLeagueusecase.addtrainingleague;
 
-
 import co.com.sofka.model.trainingleague.TrainingLeague;
 import co.com.sofka.model.trainingleague.gateways.TrainingLeagueRepository;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,6 @@ import reactor.test.StepVerifier;
 
 import java.time.LocalDate;
 import java.util.List;
-
 
 import static org.mockito.Mockito.when;
 
@@ -29,9 +27,8 @@ class AddTrainingLeagueUseCaseTest {
     @Test
     void addTrainingLeague() {
         // ARR
-
-        TrainingLeague trainingLeague = new TrainingLeague("1", "Desarollo", "descripcion", List.of("") ,LocalDate.of(2022, 10, 10), "img");
-
+        TrainingLeague trainingLeague = new TrainingLeague("1", "Desarollo", "descripcion", List.of(""),
+                LocalDate.of(2022, 10, 10), "img");
 
         Mono<TrainingLeague> trainingLeagueMono = Mono.just(trainingLeague);
         when(trainingLeagueRepository.save(trainingLeague)).thenReturn(trainingLeagueMono);

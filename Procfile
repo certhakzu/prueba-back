@@ -1,0 +1,1 @@
+web: java -Dserver.port=8080 -jar C:\Users\maxip\OneDrive\Desktop\backend-postulation-module\applications\app-service\build\libs\postulation-module.jar

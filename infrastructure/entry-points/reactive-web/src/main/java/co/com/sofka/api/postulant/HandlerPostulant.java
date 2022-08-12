@@ -2,9 +2,8 @@ package co.com.sofka.api.postulant;
 
 
 
-import co.com.sofka.model.challenge.Challenge;
+
 import co.com.sofka.model.postulant.Postulant;
-import co.com.sofka.usecase.challenge.choosechallengerandom.ChooseChallengeRandomUseCase;
 import co.com.sofka.usecase.postulantusecase.addchallenge.AddChallengeUseCase;
 import co.com.sofka.usecase.postulantusecase.assigndatesforchallenge.AssignDatesForChallengeUseCase;
 import co.com.sofka.usecase.postulantusecase.calculateage.CalculateAgeUseCase;
@@ -24,7 +23,6 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-import java.time.LocalDate;
 
 @Component
 @RequiredArgsConstructor
@@ -41,10 +39,8 @@ public class HandlerPostulant {
     private final IsSessionOnUseCase isSessionOnUseCase;
     private final FindWhoStartsTodayUseCase findWhoStartsTodayUseCase;
     private final AssignDatesForChallengeUseCase assignDatesForChallengeUseCase;
-
-
-
     private final UpdatePostulantIsSessionUseCase updatePostulantIsSessionUseCase;
+
 
     public Mono<ServerResponse> listenPostCreatePostulantUseCase(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Postulant.class)
@@ -154,4 +150,5 @@ public class HandlerPostulant {
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(sendMailUseCase.send(simpleMail), SimpleMail.class));
     }*/
+
 }

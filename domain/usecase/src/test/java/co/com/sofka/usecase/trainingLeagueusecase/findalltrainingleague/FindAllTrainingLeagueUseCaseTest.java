@@ -15,7 +15,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
-
 @ExtendWith(MockitoExtension.class)
 class FindAllTrainingLeagueUseCaseTest {
 
@@ -28,12 +27,10 @@ class FindAllTrainingLeagueUseCaseTest {
     @Test
     void findAllTrainingLeague() {
 
-
-        TrainingLeague trainingLeague1 = new TrainingLeague("1", "Desarollo", "descripcion", List.of("") ,LocalDate.of(2022, 10, 10), "img");
-        TrainingLeague trainingLeague2 = new TrainingLeague("2", "Desarollo2", "descripcion", List.of("") ,LocalDate.of(2022, 10, 10), "img");
-
-
-
+        TrainingLeague trainingLeague1 = new TrainingLeague("1", "Desarollo", "descripcion", List.of(""),
+                LocalDate.of(2022, 10, 10), "img");
+        TrainingLeague trainingLeague2 = new TrainingLeague("2", "Desarollo2", "descripcion", List.of(""),
+                LocalDate.of(2022, 10, 10), "img");
 
         Flux<TrainingLeague> trainingLeagueFlux = Flux.fromIterable(List.of(trainingLeague1, trainingLeague2));
         when(trainingLeagueRepository.findAll()).thenReturn(trainingLeagueFlux);

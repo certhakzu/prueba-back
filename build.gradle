@@ -29,4 +29,6 @@ sonarqube {
     }
 }
 
+task stage(dependsOn: ['build', 'clean'])
+
 apply from: './main.gradle'
